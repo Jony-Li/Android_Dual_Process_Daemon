@@ -30,6 +30,7 @@ public class ProcessService extends Service{
         watchDog.createWatchDog(String.valueOf(Process.myUid()));
         watchDog.connectMonitor();
 
+        //设置定时器打印Log，判断service是否存活
         Timer timer = new Timer();
         timer.scheduleAtFixedRate(new TimerTask() {
             @Override

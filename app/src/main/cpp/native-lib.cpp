@@ -2,7 +2,6 @@
 #include <string>
 #include "native_lib.h"
 
-
 int m_child;
 const char *userId;
 //定义一个文件
