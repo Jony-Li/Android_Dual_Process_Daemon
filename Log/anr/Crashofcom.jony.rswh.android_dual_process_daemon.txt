@@ -1,0 +1,21 @@
+Crash happen at 2017-10-29 18:57:55
+process:com.jony.rswh.android_dual_process_daemon
+pid:28594
+Classname:java.lang.UnsatisfiedLinkError
+Filename:WatchDog.java
+Methodname:createWatchDog
+LineNumber:-2
+Cause:No implementation found for void com.jony.rswh.android_dual_process_daemon.WatchDog.createWatchDog(java.lang.String) (tried Java_com_jony_rswh_android_1dual_1process_1daemon_WatchDog_createWatchDog and Java_com_jony_rswh_android_1dual_1process_1daemon_WatchDog_createWatchDog__Ljava_lang_String_2)
+stackTrace:
+java.lang.UnsatisfiedLinkError: No implementation found for void com.jony.rswh.android_dual_process_daemon.WatchDog.createWatchDog(java.lang.String) (tried Java_com_jony_rswh_android_1dual_1process_1daemon_WatchDog_createWatchDog and Java_com_jony_rswh_android_1dual_1process_1daemon_WatchDog_createWatchDog__Ljava_lang_String_2)
+	at com.jony.rswh.android_dual_process_daemon.WatchDog.createWatchDog(Native Method)
+	at com.jony.rswh.android_dual_process_daemon.ProcessService.onCreate(ProcessService.java:30)
+	at android.app.ActivityThread.handleCreateService(ActivityThread.java:3288)
+	at android.app.ActivityThread.-wrap5(ActivityThread.java)
+	at android.app.ActivityThread$H.handleMessage(ActivityThread.java:1664)
+	at android.os.Handler.dispatchMessage(Handler.java:102)
+	at android.os.Looper.loop(Looper.java:154)
+	at android.app.ActivityThread.main(ActivityThread.java:6218)
+	at java.lang.reflect.Method.invoke(Native Method)
+	at com.android.internal.os.ZygoteInit$MethodAndArgsCaller.run(ZygoteInit.java:942)
+	at com.android.internal.os.ZygoteInit.main(ZygoteInit.java:832)
