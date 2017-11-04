@@ -10,6 +10,12 @@ public class WatchDog {
         System.loadLibrary("native-lib");
     }
 
+    /**
+     * 创建Linux守护进程服务端
+     */
     public native void createWatchDog(String userId);
+    /**
+     * APP端(客户端)进程状态监测
+     */
     public native void connectMonitor();
 }

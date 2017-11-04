@@ -87,9 +87,6 @@ int child_create_channel() {
             }
         }
         m_child = connfd;
-
-
-
         LOGE("apk 父进程连接上了 %d ",m_child);
         break;
     }
@@ -135,25 +132,13 @@ Java_com_jony_rswh_android_1dual_1process_1daemon_WatchDog_createWatchDog(JNIEnv
     LOGE("userId %s ",userId);
     //开启双进程
     pid_t pid=fork();
-
     LOGE("pid %d ",pid);
-
     if (pid<0){//代表进程fork失败
 
-    } else if(pid == 0){//子进程 守护进程
+    } else if(pid == 0){// 0 创建子进程 ->守护进程 注意：此时创建的是另外的进程，APP进程不会打印后续Log，查看adb log即可查看后续Log
         child_do_work();
     }else if(pid > 0){//代表父进程
-        //child_do_work();
 
     }
     env->ReleaseStringUTFChars(userId_, userId);
-}
-
-extern "C"
-JNIEXPORT jstring JNICALL
-Java_com_jony_rswh_android_1dual_1process_1daemon_MainActivity_stringFromJNI(
-        JNIEnv* env,
-        jobject instance) {
-    std::string hello = "Hello from C++";
-    return env->NewStringUTF(hello.c_str());
 }
